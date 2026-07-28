@@ -1,0 +1,1 @@
+Local Files MCP v1.5 - direct JSON-RPC MCP endpoint + no-auth OAuth discovery fix

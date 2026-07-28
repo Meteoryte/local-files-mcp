@@ -1,0 +1,39 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Local backups / patch scratch
+*.bak
+*.bak_*
+*.before_*
+
+# Local environment
+.env
+
+# Generated launchers (created by the installers)
+start-gui.sh
+start-server.sh
+Start Local Files MCP GUI.bat
+Start Local Files MCP Server.bat
+Start Local Files MCP GUI.command
+Start Local Files MCP Server.command
+
+# Runtime state lives in ~/.local-files-mcp/, but never commit a real config
+config.json
+session.json
+audit.jsonl
+local-files-mcp-settings-*.json
+pending/
+
+# OS noise
+.DS_Store
+Thumbs.db

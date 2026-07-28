@@ -1,0 +1,10 @@
+# Normalize to LF in the repository.
+* text=auto eol=lf
+
+# Unix launchers must stay LF or the shell fails with "bad interpreter".
+*.sh    text eol=lf
+*.command text eol=lf
+
+# Windows launchers must stay CRLF.
+*.bat text eol=crlf
+*.ps1 text eol=crlf

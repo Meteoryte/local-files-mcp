@@ -1,0 +1,19 @@
+{
+  "profile": "safe_inbox",
+  "server": {
+    "name": "Local Files MCP",
+    "description": "Safely read/search selected local folders through MCP.",
+    "host": "127.0.0.1",
+    "port": 8765,
+    "public_url": "https://YOUR-TUNNEL.ngrok-free.app",
+    "auth_mode": "noauth"
+  },
+  "roots": [
+    {
+      "id": "inbox",
+      "path": "~/ChatGPT-MCP-Inbox",
+      "access": "read",
+      "recursive": true
+    }
+  ]
+}

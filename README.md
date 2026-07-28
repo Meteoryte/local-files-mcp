@@ -41,6 +41,15 @@ See [`REQUIREMENTS.md`](REQUIREMENTS.md) for operating-system details.
 
 ## Quick install
 
+First, get the code:
+
+```bash
+git clone https://github.com/Meteoryte/local-files-mcp.git
+cd local-files-mcp
+```
+
+Then run the installer for your OS.
+
 ### macOS
 
 Double-click:
@@ -196,4 +205,4 @@ Optional project tools:
 
 ## License
 
-No license has been selected in this repository yet. Add a license before publishing or accepting external contributions.
+MIT — see [`LICENSE`](LICENSE).

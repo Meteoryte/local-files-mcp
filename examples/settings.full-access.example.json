@@ -1,0 +1,23 @@
+{
+  "profile": "full_access",
+  "server": {
+    "name": "Local Files MCP",
+    "description": "Full local filesystem MCP access. Dangerous. Use only on a private dev machine.",
+    "host": "127.0.0.1",
+    "port": 8765,
+    "public_url": "https://YOUR-TUNNEL.ngrok-free.app",
+    "auth_mode": "noauth"
+  },
+  "roots": [
+    {
+      "id": "FULL_ACCESS",
+      "path": "/",
+      "access": "write",
+      "recursive": true,
+      "allow_extensions": ["*"],
+      "deny_globs": [],
+      "write_globs": ["**/*"],
+      "tags": ["full-access"]
+    }
+  ]
+}

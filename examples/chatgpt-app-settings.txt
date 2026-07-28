@@ -1,0 +1,13 @@
+ChatGPT Developer Mode App/Connector settings
+=============================================
+
+COPY THESE FIELDS EXACTLY:
+Name: Local Files MCP
+Description: Local document access for folders you explicitly configure. Search/read files; writes require local approval.
+MCP URL / Connector URL: https://YOUR-PUBLIC-TUNNEL.example/mcp
+Authentication: No authentication
+
+IMPORTANT:
+- ChatGPT requires public HTTPS.
+- Do not use http://localhost, http://127.0.0.1, private IP addresses, or self-signed HTTPS.
+- In the GUI Public HTTPS URL field, paste the base URL only, e.g. https://abc123.ngrok-free.app. The GUI adds /mcp.

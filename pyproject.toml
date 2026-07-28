@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "local-files-mcp"
+version = "0.3.1"
+description = "A safety-first local filesystem MCP server for ChatGPT Developer Mode"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=1.9.0",
+  "uvicorn>=0.29.0",
+  "starlette>=0.37.2",
+  "pydantic>=2.7.0",
+]
+
+[project.scripts]
+local-files-mcp = "local_files_mcp.cli:main"
+local-files-mcp-gui = "local_files_mcp.admin_gui:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["local_files_mcp"]
