@@ -1,9 +1,73 @@
-# Virtual environments
+# ---------------------------------------------------------------------------
+# Live configuration and runtime state
+#
+# A real config.json names the folders you exposed and your public tunnel
+# hostname. That hostname is a public door to a server that reads your local
+# files, so it must never be committed. Runtime state normally lives in
+# ~/.local-files-mcp/, outside the repo, but the GUI can export a settings
+# snapshot anywhere -- these patterns catch it if it lands here.
+# ---------------------------------------------------------------------------
+config.json
+config.last-good.json
+user_settings.json
+session.json
+audit.jsonl
+pending/
+local-files-mcp-settings*.json
+*-settings-2*.json
+
+# Keep the sanitized templates. They contain only YOUR-TUNNEL placeholders.
+!examples/settings.safe.example.json
+!examples/settings.full-access.example.json
+
+# ---------------------------------------------------------------------------
+# Development notes and session logs
+#
+# These accumulate real paths, tunnel hostnames, and connector settings while
+# you work. Useful locally, never publishable.
+# ---------------------------------------------------------------------------
+HANDOFF.md
+interaction_log_*.md
+*_IMPLEMENTATION_REPORT.md
+notes.local.md
+
+# ---------------------------------------------------------------------------
+# Superseded patch bundles
+#
+# Each *_patch/ folder carries a full copy of the files it replaced, so they
+# reintroduce stale source and any hostnames those files contained.
+# ---------------------------------------------------------------------------
+local_files_mcp_v*_patch/
+*_header_patch/
+*_noauth_patch/
+*_keepalive_patch/
+patch_*.py
+
+# ---------------------------------------------------------------------------
+# Write-test scratch
+#
+# Byproducts of exercising the write path against a live connector.
+# ---------------------------------------------------------------------------
+*_probe.txt
+*_probe_*.txt
+*_write_test.txt
+*_test.txt
+mcp_write_test.txt
+
+# ---------------------------------------------------------------------------
+# Backups left by in-place patching
+# ---------------------------------------------------------------------------
+*.bak
+*.bak_*
+*.before_*
+*.orig
+
+# ---------------------------------------------------------------------------
+# Virtual environments and Python build output
+# ---------------------------------------------------------------------------
 .venv/
 venv/
 env/
-
-# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -11,15 +75,16 @@ build/
 dist/
 .pytest_cache/
 
-# Local backups / patch scratch
-*.bak
-*.bak_*
-*.before_*
-
-# Local environment
+# ---------------------------------------------------------------------------
+# Local environment overrides (.env.example IS tracked)
+# ---------------------------------------------------------------------------
 .env
+.env.local
+!.env.example
 
-# Generated launchers (created by the installers)
+# ---------------------------------------------------------------------------
+# Launchers written by the installers at install time
+# ---------------------------------------------------------------------------
 start-gui.sh
 start-server.sh
 Start Local Files MCP GUI.bat
@@ -27,13 +92,14 @@ Start Local Files MCP Server.bat
 Start Local Files MCP GUI.command
 Start Local Files MCP Server.command
 
-# Runtime state lives in ~/.local-files-mcp/, but never commit a real config
-config.json
-session.json
-audit.jsonl
-local-files-mcp-settings-*.json
-pending/
+# ---------------------------------------------------------------------------
+# Artifacts of the interrupted base64 upload this repo used to contain
+# ---------------------------------------------------------------------------
+.repo-payload/
 
+# ---------------------------------------------------------------------------
 # OS noise
+# ---------------------------------------------------------------------------
 .DS_Store
 Thumbs.db
+desktop.ini
